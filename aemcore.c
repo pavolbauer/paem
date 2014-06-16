@@ -529,7 +529,7 @@ rollback_event(rlb_t* event){
           
           calcTimes(&diffTimes[diffHeap[cnt]], &diffInf[cnt], 
                     event->tt, oldrate, isdrate2[cnt], rng);
-          printf("UPDATE dependent diffusion time: %f n",diffTimes[diffHeap[cnt]]);
+
           update(diffHeap[cnt], diffTimes, diffNode, 
                  diffHeap, diffHeapSize);
           
@@ -550,7 +550,8 @@ rollback_event(rlb_t* event){
               (*rfun[j])(&xx[subvol * Mspecies], event->tt, vol[vxs[subvol]], 
                          &data[vxs[subvol] * dsize], sd[vxs[subvol]]);
           
-          assert(rrate[subvol * Mreactions + j]>=0.0);
+          //assert(rrate[subvol * Mreactions + j]>0.0);
+	  printf("new rate: %f.\n",rrate[subvol * Mreactions + j]);
           
           if(j==re) { // update of the affected node
             reactTimes[reactHeap[subvol * Mreactions + j]]=event->tt;
@@ -576,6 +577,7 @@ rollback_event(rlb_t* event){
     
     /* revert local diffusion */
     xx[subvol * Mspecies + spec]++;
+    assert(xx[subvol * Mspecies + spec]>=0);
     //xxt[subvol] = tt;
 
     if (xx[subvol * Mspecies + spec] < 0) {
@@ -596,6 +598,7 @@ rollback_event(rlb_t* event){
     else if (localdom == dom) {
         //assert(localpos < sd_length[st->id]);
         xx[localpos * Mspecies + to_spec]--;
+	assert(xx[localpos * Mspecies + to_spec]>=0);
         //xxt[localpos] = event->tt;
     }
     else {
@@ -1211,7 +1214,7 @@ run (void *_args)
             rb = (rlb_t*)malloc(sizeof(rlb_t));
             rb->tt=tt;
             rb->type=event;
-            rb->id=reactNode[0];  // diffNode[0]
+            rb->id=diffNode[0];  // diffNode[0]
             
             rblist=g_list_append(rblist,(gpointer)rb);
             printf("added event %d at time %f. xx was %d and rate was %f.\n",rb->type,rb->tt, xx[subvol * Mspecies + re],rrate[subvol * Mreactions + re]);
@@ -1399,8 +1402,8 @@ run (void *_args)
     printf("****************************************************\n");
     printf("****************************************************\n");
     
-    //testHistoryOut(2);
-    testHistoryOut(0.02);
+    testHistoryOut(1.6);
+    //testHistoryOut(0.02);
   
     free(reactHeap);
     free(reactNode);
