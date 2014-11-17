@@ -1,0 +1,65 @@
+*** 3d box increasing diffusion ***
+*********************************************************
+#Reaction rates are A->B=0.05 and B->A=0.05
+#Initial Diffusion constants; D_A=0.1 and D_B=0.1
+#Ncells=14004
+*********************************************************
+#D1;
+Reaction  events = 196262627
+Diffusion events = 87489372
+Ratio R:D= 2.24:1
+Elapsed time is 95.314325 seconds. (sequential NSM - my computer)
+Sandy - AEM:
+real	14m12.531s
+user	14m11.824s
+sys	0m0.080s
+*********************************************************
+#D2;
+Reaction  events = 196188293
+Diffusion events = 174972632
+Ratio R:D= 1.12:1
+Elapsed time is 133.677692 seconds. (sequential NSM - my computer)
+Sandy - AEM:
+real	24m13.306s
+user	24m12.168s
+sys	0m0.076s
+*********************************************************
+#D4;
+Reaction  events = 196138310
+Diffusion events = 349968222
+Ratio R:D= 1:1.78
+Elapsed time is 215.726972 seconds. (sequential  NSM - my computer)
+Sandy - AEM:
+real	44m3.485s
+user	44m1.484s
+sys	0m0.072s
+*********************************************************
+#D6;
+Reaction  events = 196133089
+Diffusion events = 524995008
+Ratio R:D= 1:2.6767
+Elapsed time is 302.042322 seconds. (sequential  NSM - my computer)
+Sandy - AEM:
+real	63m30.590s
+user	63m27.816s
+sys	0m0.064s
+*********************************************************
+#D10;
+Reaction  events = 196123319
+Diffusion events = 874877090
+Ratio R:D= 1:4.4609
+Elapsed time is 457.041933 seconds. (sequential  NSM - my computer)
+Sandy - AEM:
+real	103m30.228s
+user	103m25.652s
+sys	0m0.088s
+*********************************************************
+#D20;
+Reaction  events = 196112370
+Diffusion events = 1749752198
+ratio R:D= 1:8.9222
+Elapsed time is 1058.614066 seconds. (sequential  NSM - my computer)
+Sandy - AEM:
+real	203m8.459s
+user	202m59.528s
+sys	0m0.076s
