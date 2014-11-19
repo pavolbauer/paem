@@ -1,0 +1,4 @@
+xx=umod.U(:,end);
+ok=ok&&sum([xx(1:3:end)])==0;
+ok=ok&&sum([xx(2:3:end)])==0;
+ok=ok&&sum([xx(3:3:end)])==30*nthreads;

@@ -1,0 +1,2 @@
+xx=umod.U(:,end);
+ok=ok&&sum([xx(6:6:end)])==30*nthreads;

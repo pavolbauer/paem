@@ -1,0 +1,2 @@
+xx=umod.U(:,end);
+ok=ok&&sum([xx(3) xx(end)])==15*nthreads;
