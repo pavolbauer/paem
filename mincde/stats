@@ -1,0 +1,29 @@
+MIncde
+---------
+Voxels: 1555
+D_size: 7775
+t_end: 400
+
+Reaction  events = 273982
+Diffusion events = 70080678
+
+React-Heap Size: 7775
+Diff-Heap Size: 51086
+
+NSM runtime: 29.949752
+AEM runtime: ?
+
+MIncde_bigger
+---------
+Voxels: 13307
+D_size: 66535
+t_end: 40
+
+Reaction  events = 113443
+Diffusion events = 156740442
+
+AEM React-Heap Size: 66535
+AEM Diff-Heap Size: 463310
+
+NSM runtime: 74.515941
+AEM runtime: ?
