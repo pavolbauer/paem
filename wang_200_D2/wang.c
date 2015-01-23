@@ -22,12 +22,12 @@
 /* Reaction propensities. */
 double rFun1(const int *x, double t, double vol, const double *data, int sd)
 {
-  return C1*xA*x[B]; //A+B->2B+A
+  return C1*xA*x[B]/vol; //A+B->2B+A
 }
 
 double rFun2(const int *x, double t, double vol, const double *data, int sd)
 {
-  return C2*x[B]*x[C]; //C+B->2C
+  return C2*x[B]*x[C]/vol; //C+B->2C
 }
 
 double rFun3(const int *x, double t, double vol, const double *data, int sd)
