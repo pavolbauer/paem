@@ -7,14 +7,15 @@
 
 #define NR 3
 
-// Wang et al:
+/* Wang et al:
 #define C1 0.01
 #define C2 0.01
 #define C3 10
+*/
 
 // Dematte et al:
-#define C1 55
-#define C2 15
+#define C1 15
+#define C2 55
 #define C3 10
 
 /* state of A is conserved */
@@ -28,7 +29,7 @@
 /* Reaction propensities. */
 double rFun1(const int *x, double t, double vol, const double *data, int sd)
 {
-  return C1*xA*x[B]/vol; //A+B->2B+A
+  return C1*x[B]/vol; //A+B->2B+A
 }
 
 double rFun2(const int *x, double t, double vol, const double *data, int sd)
